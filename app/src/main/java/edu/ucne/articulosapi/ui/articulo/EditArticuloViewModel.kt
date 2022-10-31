@@ -20,11 +20,11 @@ class EditArticuloViewModel @Inject constructor(
     var marca by mutableStateOf("")
     var existencia by mutableStateOf("")
 
-    var currenId = get<string>("ariticuloId").
+    //var currenId = get<string>("ariticuloId").
 
     init {
         viewModelScope.launch {
-            val articulo = repository.getArticulo(currenId)
+            val articulo = repository.getArticulo("1") // Este Id no va asi debe ser variable
 
             if (articulo != null) {
                 descripcion = articulo.descripcion
